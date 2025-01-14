@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.input-no-spinner::-webkit-inner-spin-button,
+.input-no-spinner::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-no-spinner {
+  -moz-appearance: textfield;
+}
+
+/* Style the range input */
+.custom-slider {
+  -webkit-appearance: none; /* Remove default styling */
+  width: 100%; /* Full width */
+  height: 8px; /* Track height */
+  background: #d1d1d1; /* Gradient track */
+  border-radius: 10px; /* Rounded corners */
+  outline: none; /* Remove outline */
+  transition: background 0.3s ease;
+}
+
+/* Style the thumb (slider handle) */
+.custom-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px; /* Thumb size */
+  height: 20px;
+  background: #fff; /* Thumb color */
+  border-radius: 50%; /* Make it round */
+  cursor: pointer; /* Change the cursor */
+  box-shadow: 0 0 4px 6px rgba(105, 105, 105, 0.199); /* Add a shadow */
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+/* Hover effect for the thumb */
+.custom-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2); /* Slightly enlarge */
+}
+
+/* For Firefox */
+.custom-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 4px 6px rgba(105, 105, 105, 0.199);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.custom-slider::-moz-range-thumb:hover {
+  transform: scale(1.2);
+}
+
+/* Change the track color dynamically on hover or interaction */
+.custom-slider:active {
+  background: linear-gradient(to right, #5c2fc2, #6420aa);
+}
+
+input[type="color"] {
+  border: none; /* Removes the border */
+  outline: none; /* Removes the focus outline */
+  padding: 0; /* Optional: Remove extra padding */
+  background: none; /* Optional: Remove background styling */
+  appearance: none; /* Removes default OS styles */
+  -webkit-appearance: none; /* For Safari */
+}
+
+/* Optional: Style for better customization */
+input[type="color"]::-webkit-color-swatch {
+  border: none; /* Removes the swatch border */
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0; /* Removes the wrapper padding */
+}
