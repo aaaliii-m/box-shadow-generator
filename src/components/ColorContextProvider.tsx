@@ -4,7 +4,7 @@ import { colorContext } from "../context/colorContext";
 
 export const ColorContextProviver = ({ children }: { children: React.ReactNode }): React.ReactNode => {
     const [colors, setColors] = useState<Record<string, string>>({
-        background: "#fff",
+        background: "#ffffff",
         box: "#f3a712",
         shadow: "#000000",
     });

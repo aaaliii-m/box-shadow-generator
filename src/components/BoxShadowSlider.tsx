@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { shadowProperties } from "../assets/types";
+import { useShadowGeneratorContext } from "../context/shadowGeneratorContext";
 
-export const BoxShadowSlider = (props: any) => {
-  const [value, setValue] = useState<number>(0);
+export const BoxShadowSlider = (props: { label: string, type: keyof Exclude<shadowProperties, 'inset'> }) => {
+  const context = useShadowGeneratorContext();
 
   return (
     <>
@@ -12,21 +13,24 @@ export const BoxShadowSlider = (props: any) => {
           </label>
           <input
             className="rounded-lg px-4 py-3 text-right input-no-spinner text-xs w-[75px] focus:outline-none"
-            type="text"
-            min="0"
+            type="number"
             max="100"
-            value={`${value} px`}
-            onChange={(e) => setValue(parseInt(e.target.value) || 0)}
-          />
+            value={context.shadowProperties[props.type] as string}
+            onChange={(e) => {
+              context.setShadowProperty(props.type, e.target.value);
+            }}
+          /><span className="text-xs ml-[-12px]">px</span>
         </div>
         <div className="mt-4">
           <input
             className="custom-slider"
             type="range"
             max="100"
-            min="0"
-            value={value}
-            onChange={(e) => setValue(parseInt(e.target.value))}
+            min={props.type === 'opacity' ? "0" : "-100"}
+            value={context.shadowProperties[props.type] as string}
+            onChange={(e) => {
+              context.setShadowProperty(props.type, e.target.value);
+            }}
           />
         </div>
       </div>

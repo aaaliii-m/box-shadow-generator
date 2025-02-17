@@ -1,7 +1,8 @@
-import { useColorContext } from "../context/colorContext";
+import { ShadowContextType } from "../assets/types";
+import { useShadowGeneratorContext } from "../context/shadowGeneratorContext";
 
-export const BoxShadowColors = (props: { color: string, colorKey: string }) => {
-  const context = useColorContext();
+export const BoxShadowColors = (props: { color: Exclude<keyof ShadowContextType['shadowProperties'], 'inset'>, colorKey: string }) => {
+  const context: ShadowContextType = useShadowGeneratorContext();
 
   return (
     <>
@@ -14,16 +15,16 @@ export const BoxShadowColors = (props: { color: string, colorKey: string }) => {
             className="focus:outline-none border-0 cursor-pointer rounded w-5 h-5 absolute right-[64px]"
             type="color"
             onChange={(e) => {
-              context.setColor(props.color, e.target.value);
+              context.setShadowProperty(props.color, e.target.value);
             }}
-            value={context.colors[props.color]}
+            value={context.shadowProperties[props.color]}
           />
           <input
             className="rounded px-2 py-[6px] text-right input-no-spinner text-xs w-[90px] focus:outline-none"
             type="text"
-            value={context.colors[props.color]}
+            value={context.shadowProperties[props.color]}
             onChange={(e) => {
-              context.setColor(props.color, e.target.value);
+              context.setShadowProperty(props.color, e.target.value);
             }}
           />
         </div>
