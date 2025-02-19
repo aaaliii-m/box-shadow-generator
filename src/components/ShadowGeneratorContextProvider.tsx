@@ -12,7 +12,7 @@ export const ShadowGeneratorContextProvider = ({ children }: { children: React.R
         blur: '0',
         spread: '0',
         opacity: '100',
-        inset: false
+        inset: '',
     });
 
     const setShadowProperty: ShadowContextType['setShadowProperty'] = (key: string, value: string | number | boolean) => {

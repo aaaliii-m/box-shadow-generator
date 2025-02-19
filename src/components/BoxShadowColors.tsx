@@ -6,7 +6,7 @@ export const BoxShadowColors = (props: { color: Exclude<keyof ShadowContextType[
 
   return (
     <>
-      <div>
+      <div className="mb-4 sm:mb-0">
         <div className="flex gap-4 items-center justify-between mt-2 relative">
           <label className="font-light text-xs capitalize">
             {props.color}

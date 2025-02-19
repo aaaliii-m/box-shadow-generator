@@ -13,7 +13,7 @@ export type shadowProperties = {
   blur: string,
   spread: string,
   opacity: string,
-  inset: boolean
+  inset: string;
 }
 
 

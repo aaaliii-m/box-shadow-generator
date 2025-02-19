@@ -5,7 +5,7 @@ const App = () => {
   return (
     <>
       <ShadowGeneratorContextProvider>
-        <div className="bg-[#e8edee] h-screen">
+        <div className="bg-[#e8edee] min-h-screen">
           <Home />
         </div>
       </ShadowGeneratorContextProvider>
