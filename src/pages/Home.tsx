@@ -60,8 +60,8 @@ export const Home = () => {
               <BoxView background="#FBF8EF" boxBg="#f3A712" boxShadowColor="#000000" />
             </div>
             {/* code */}
-            <div className="bg-slate-700 rounded-xl shadow-sm px-4 py-8 text-gray-200 mx-4 sm:mx-0 mt-4 lg:mt-0 overflow-scroll">
-              <pre><code className="pe-8 sm:pe-0">box-shadow: {context.shadowProperties.horizontal}px {context.shadowProperties.vertical}px {context.shadowProperties.blur}px {context.shadowProperties.spread}px {context.shadowProperties.shadow} {context.shadowProperties.inset}</code></pre>
+            <div className="bg-slate-700 rounded-xl shadow-sm px-4 py-8 text-gray-200 mx-4 sm:mx-0 mt-4 lg:mt-0 overflow-scroll sm:overflow-hidden">
+              <pre><code className="pe-8 sm:pe-0 cursor-text">box-shadow: {context.shadowProperties.horizontal}px {context.shadowProperties.vertical}px {context.shadowProperties.blur}px {context.shadowProperties.spread}px {context.shadowProperties.shadow} {context.shadowProperties.inset}</code></pre>
             </div>
           </div>
         </div>
